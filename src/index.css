@@ -1,0 +1,18 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-margin-top: 100px;
+}
+
+/* Smooth scrolling for Safari */
+@supports (-webkit-overflow-scrolling: touch) {
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
