@@ -13,10 +13,18 @@ const styles = `
   .section {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
-    margin: 2rem 0;
+    margin: 2rem auto;
     padding: 3rem 2rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(10px);
+    max-width: 1200px;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      margin: 1rem;
+      padding: 2rem 1rem;
+    }
   }
 
   .hero-bg {
@@ -55,6 +63,15 @@ const styles = `
     transform-style: preserve-3d;
     perspective: 1000px;
     padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-card {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
   }
 
   .feature-card {
@@ -62,6 +79,7 @@ const styles = `
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    padding: 2rem;
   }
 
   .feature-card:hover {
@@ -69,9 +87,63 @@ const styles = `
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 
+  @media (max-width: 768px) {
+    .feature-card {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .feature-card ul {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+
   .first-line-indent {
     text-indent: 4em;
     padding-left: 2em;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  @media (max-width: 768px) {
+    .first-line-indent {
+      text-indent: 2em;
+      padding-left: 1em;
+      padding-right: 1em;
+      text-align: justify;
+    }
+
+    p.first-line-indent {
+      margin-bottom: 1.5rem !important;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+  }
+
+  .text-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .text-content {
+      padding: 0 1rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr !important;
+    }
   }
 `;
 
@@ -280,6 +352,7 @@ function AboutUs() {
                   <p className="text-lg leading-relaxed text-justify mb-6 first-line-indent" style={{ color: colorPalette.text }}>
                     Established in 1986, the Department of Computer Science & Engineering started with an intake of sixty students. In thirty-eight years of academic services, the department has grown steadily and currently offers four autonomous programs:
                   </p>
+
                   <ul className="space-y-3 mt-4 mb-6 max-w-md mx-auto">
                     <li className="flex items-center">
                       <span className="text-lg mr-2" style={{ color: colorPalette.accent }}>•</span>

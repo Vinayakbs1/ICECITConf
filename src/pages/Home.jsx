@@ -9,24 +9,7 @@ const styles = `
     position: relative;
     overflow: hidden;
     will-change: transform;
-  }
-
-  .hero-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
-    animation: pulse 15s infinite;
-    will-change: transform;
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(1) translateZ(0); }
-    50% { transform: scale(1.5) translateZ(0); }
-    100% { transform: scale(1) translateZ(0); }
+    padding: 1rem;
   }
 
   .hero-card {
@@ -41,6 +24,15 @@ const styles = `
     perspective: 1000px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .hero-card {
+      margin: 0.5rem;
+      padding: 0.75rem;
+    }
   }
 
   .logo-container {
@@ -53,6 +45,77 @@ const styles = `
     background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    .logo-container {
+      padding: 0.5rem;
+      max-width: 250px;
+    }
+  }
+
+  .timeline-content {
+    width: 100%;
+    max-width: calc(50% - 3rem);
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-content {
+      max-width: 100%;
+      margin: 1rem 0;
+    }
+  }
+
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .registration-form {
+      padding: 0.5rem;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .form-field {
+    flex: 1 1 300px;
+  }
+
+  @media (max-width: 640px) {
+    .form-field {
+      flex: 1 1 100%;
+    }
+  }
+
+  .logo-container {
+    position: relative;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 
   .logo-container img {
@@ -433,7 +496,7 @@ function Home() {
                   alt="SIT Logo" 
                   className="w-full h-auto object-contain"
                 />
-              
+　　 　 　 　
               </motion.div>
               <motion.div 
                 className="logo-container w-32 sm:w-40 md:w-48"
@@ -449,7 +512,7 @@ function Home() {
                   alt="SIT Logo" 
                   className="w-full h-auto object-contain"
                 />
-              
+　　 　 　 　
               </motion.div>
               <motion.div 
                 className="logo-container w-32 sm:w-40 md:w-48"
@@ -486,7 +549,7 @@ function Home() {
                 </span>
                 <span className="block text-2xl sm:text-3xl mt-4 text-blue-600">ICECIT-2025</span>
               </motion.h1>
-              
+　　 　 　 　
               <motion.h2 
                 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-600 max-w-3xl mx-auto px-4"
                 initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -498,7 +561,7 @@ function Home() {
               >
                 Association of Computer Science & Engineering, Information Science & Engineering, Master of Computer Application
               </motion.h2>
-              
+　　 　 　 　
               <motion.p 
                 className="text-3xl sm:text-4xl font-extrabold text-blue-700"
                 initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -532,7 +595,7 @@ function Home() {
               }}
             >
               <img 
-                src="http://icsses.sit.ac.in/assets/SIT_ADMIN-BhrGAbjH.jpg" 
+                src="./images/sit.jpg" 
                 alt="SIT College" 
                 className="w-full h-auto rounded-lg shadow-2xl"
               />

@@ -5,88 +5,96 @@ const styles = `
   .page-container {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
-    padding: 2rem 0;
+    padding: 1rem;
     position: relative;
     overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .page-container {
+      padding: 0.5rem;
+    }
   }
 
   .section {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
-    margin: 2rem 0;
-    padding: 3rem 2rem;
+    margin: 1.5rem 0;
+    padding: 2rem 1.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(10px);
+  }
+
+  @media (max-width: 640px) {
+    .section {
+      margin: 1rem 0;
+      padding: 1.5rem 1rem;
+    }
   }
 
   .card {
     background: white;
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     transform-style: preserve-3d;
     perspective: 1000px;
+    width: 100%;
   }
 
-  .card:hover {
-    transform: translateY(-5px) translateZ(20px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #1e3c72, #2a5298);
-    border-radius: 15px 15px 0 0;
+  @media (max-width: 768px) {
+    .card {
+      padding: 1rem;
+    }
   }
 
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #1e3c72;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     position: relative;
+    padding: 0 1rem;
   }
 
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #1e3c72, #2a5298);
-    border-radius: 2px;
+  @media (max-width: 640px) {
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
   }
 
   .profile-image {
     border: 4px solid #1e3c72;
     transition: all 0.3s ease;
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
   }
 
-  .profile-image:hover {
-    transform: scale(1.05);
-    border-color: #2a5298;
+  @media (max-width: 480px) {
+    .profile-image {
+      max-width: 150px;
+      border-width: 3px;
+    }
   }
 
-  .name {
-    color: #1e3c72;
-    font-weight: bold;
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
   }
 
-  .role {
-    color: #2a5298;
-  }
-
-  .organization {
-    color: #4a5568;
+  @media (max-width: 640px) {
+    .committee-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
   }
 
   .member-list-item {
@@ -98,9 +106,33 @@ const styles = `
     border-left: 4px solid #1e3c72;
   }
 
-  .member-list-item:hover {
-    transform: translateX(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @media (max-width: 480px) {
+    .member-list-item {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .committee-section {
+    margin: 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .committee-section {
+      margin: 1.5rem 0;
+    }
+  }
+
+  .member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .member-info {
+      gap: 0.25rem;
+    }
   }
 
   .nav-menu {
@@ -155,17 +187,6 @@ const styles = `
   @media (max-width: 768px) {
     .nav-menu {
       display: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .section {
-      margin: 1rem;
-      padding: 2rem 1rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
     }
   }
 `;
@@ -643,7 +664,7 @@ const Committees = () => {
           <h2 className="section-title">
             Advisory Committee
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="committee-grid">
             {advisoryCommittee.slice(0, 12).map((member, index) => (
               <motion.div 
                 key={index}
@@ -669,7 +690,7 @@ const Committees = () => {
           <h2 className="section-title">
             Technical Program Chairs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="committee-grid">
             {[
               {
                 name: "Dr G S Javed",
@@ -712,69 +733,24 @@ const Committees = () => {
           <h2 className="section-title">
             Publication Chairs
           </h2>
-          <div className="flex flex-col gap-6 max-w-4xl mx-auto">
-            {/* First Row - 2 members */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {publicationChairs.slice(0, 2).map((member, index) => (
-                <motion.div 
-                  key={index}
-                  className="text-center card p-6"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: index * 0.1
-                  }}
-                >
-                  <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                  <p className="text-md text-gray-700">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Second Row - 2 members */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {publicationChairs.slice(2, 4).map((member, index) => (
-                <motion.div 
-                  key={index + 2}
-                  className="text-center card p-6"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: (index + 2) * 0.1
-                  }}
-                >
-                  <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                  <p className="text-md text-gray-700">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Third Row - 1 member */}
-            <div className="md:w-1/2 mx-auto">
-              {publicationChairs.slice(4, 5).map((member, index) => (
-                <motion.div 
-                  key={index + 4}
-                  className="text-center card p-6"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: 0.4
-                  }}
-                >
-                  <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                  <p className="text-md text-gray-700">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="committee-grid">
+            {publicationChairs.map((member, index) => (
+              <motion.div 
+                key={index}
+                className="text-center card p-6"
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.5,
+                  delay: index * 0.1
+                }}
+              >
+                <p className="text-xl font-bold mb-2 name">{member.name}</p>
+                <p className="text-md text-gray-700">{member.role}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.section>
 
@@ -783,7 +759,7 @@ const Committees = () => {
           <h2 className="section-title">
             Technical Chairs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="committee-grid">
             {technicalChairs.map((member, index) => (
               <motion.div 
                 key={index}
@@ -809,69 +785,24 @@ const Committees = () => {
           <h2 className="section-title">
             Publicity Chairs
           </h2>
-          <div className="flex flex-col gap-6 max-w-4xl mx-auto">
-            {/* First Row - 2 members */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {publicityChairs.slice(0, 2).map((member, index) => (
-                <motion.div 
-                  key={index}
-                  className="text-center card p-6"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: index * 0.1
-                  }}
-                >
-                  <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                  <p className="text-md text-gray-700">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Second Row - 2 members */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {publicityChairs.slice(2, 4).map((member, index) => (
-                <motion.div 
-                  key={index + 2}
-                  className="text-center card p-6"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: (index + 2) * 0.1
-                  }}
-                >
-                  <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                  <p className="text-md text-gray-700">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Third Row - 1 member */}
-            <div className="md:w-1/2 mx-auto">
-              {publicityChairs.slice(4, 5).map((member, index) => (
-                <motion.div 
-                  key={index + 4}
-                  className="text-center card p-6"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: 0.4
-                  }}
-                >
-                  <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                  <p className="text-md text-gray-700">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="committee-grid">
+            {publicityChairs.map((member, index) => (
+              <motion.div 
+                key={index}
+                className="text-center card p-6"
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.5,
+                  delay: index * 0.1
+                }}
+              >
+                <p className="text-xl font-bold mb-2 name">{member.name}</p>
+                <p className="text-md text-gray-700">{member.role}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.section>
 
@@ -880,48 +811,24 @@ const Committees = () => {
           <h2 className="section-title">
             Finance Chairs
           </h2>
-          <div className="flex flex-col gap-6 max-w-4xl mx-auto">
-            {/* First Row - 2 members */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {financeChairs.slice(0, 2).map((member, index) => (
-                <motion.div 
-                  key={index}
-                  className="text-center card p-6"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: index * 0.1
-                  }}
-                >
-                  <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                  <p className="text-md text-gray-700">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Second Row - 1 member */}
-            <div className="md:w-1/2 mx-auto">
-              {financeChairs.slice(2, 3).map((member, index) => (
-                <motion.div 
-                  key={index + 2}
-                  className="text-center card p-6"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5,
-                    delay: 0.2
-                  }}
-                >
-                  <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                  <p className="text-md text-gray-700">{member.role}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="committee-grid">
+            {financeChairs.map((member, index) => (
+              <motion.div 
+                key={index}
+                className="text-center card p-6"
+                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.5,
+                  delay: index * 0.1
+                }}
+              >
+                <p className="text-xl font-bold mb-2 name">{member.name}</p>
+                <p className="text-md text-gray-700">{member.role}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.section>
 
@@ -930,7 +837,7 @@ const Committees = () => {
           <h2 className="section-title">
             Technical Committee
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="committee-grid">
             {technicalCommittee.slice(0, 15).map((member, index) => (
               <motion.div 
                 key={index}

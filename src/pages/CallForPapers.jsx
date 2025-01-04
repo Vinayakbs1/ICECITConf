@@ -17,7 +17,13 @@ const styles = `
     overflow: hidden;
     will-change: transform;
     min-height: 100vh;
-    padding: clamp(1rem, 5vw, 4rem) 0;
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-bg {
+      padding: 0.75rem;
+    }
   }
 
   .hero-bg::before {
@@ -40,7 +46,7 @@ const styles = `
 
   .hero-card {
     background: rgba(255, 255, 255, 0.95);
-    border-radius: clamp(15px, 2vw, 20px);
+    border-radius: 20px;
     box-shadow: 
       0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05),
@@ -48,43 +54,119 @@ const styles = `
     backdrop-filter: blur(10px);
     transform-style: preserve-3d;
     perspective: 1000px;
-    padding: clamp(1.5rem, 3vw, 2rem);
-    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    padding: 1.5rem;
+    margin: 1rem auto;
     width: 100%;
-    max-width: 100%;
+    max-width: 1200px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-card {
+      padding: 1rem;
+      margin: 0.75rem;
+      border-radius: 15px;
+    }
   }
 
   .track-card {
     background: rgba(255, 255, 255, 0.95);
-    border-radius: clamp(10px, 1.5vw, 15px);
+    border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    padding: clamp(1rem, 2vw, 1.5rem);
+    padding: 1.5rem;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .track-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  @media (max-width: 640px) {
+    .track-card {
+      padding: 1rem;
+      border-radius: 12px;
+    }
+  }
+
+  .track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .track-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
   }
 
   .track-title {
-    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    font-size: 1.25rem;
     line-height: 1.4;
-  }
-
-  .track-icon {
-    width: clamp(1.5rem, 3vw, 2rem);
-    height: clamp(1.5rem, 3vw, 2rem);
-    margin-right: clamp(0.5rem, 1vw, 0.75rem);
+    margin-bottom: 0.75rem;
   }
 
   @media (max-width: 640px) {
-    .hero-card {
-      margin-left: 1rem;
-      margin-right: 1rem;
+    .track-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .track-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.75rem;
+  }
+
+  @media (max-width: 640px) {
+    .track-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .dates-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .dates-section {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+  }
+
+  .date-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 480px) {
+    .date-item {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .submission-guidelines {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .submission-guidelines {
+      margin: 1.5rem auto;
+      padding: 0 0.75rem;
     }
   }
 `;
