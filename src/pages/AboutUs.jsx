@@ -138,7 +138,7 @@ function AboutUs() {
               >
                 <img
                   className="w-40 h-40 object-contain transform transition-transform hover:scale-105"
-                  src="public/images/logo.png"
+                  src="/images/logo.png"
                   alt="SIT Logo"
                 />
               </motion.div>

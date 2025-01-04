@@ -205,19 +205,19 @@ const patrons = [
     name: "Shri T. K. Nanjundappa",
     role: "Honorary Secretary",
     org: "Sree Siddaganga Education Society, Siddaganga Math, Tumakuru",
-    img: "public/images/nanju.jpg"
+    img: "/images/nanju.jpg"
   },
   {
     name: "Dr. Shivakumaraiah",
     role: "Joint Secretary",
     org: "Sree Siddaganga Education Society, Siddaganga Math, Tumakuru",
-    img: "public/images/shivkumar.jpeg"
+    img: "/images/shivkumar.jpeg"
   },
     {
     name: "Dr. M. N. Channabasappa",
     role: "Director",
     org: "SIT, Tumakuru",
-    img: "public/images/chanu.gif"
+    img: "/images/chanu.gif"
   }
 ];
 
@@ -497,7 +497,7 @@ const Committees = () => {
           >
             <img
               className="w-64 h-64 rounded-full shadow-2xl mb-8 profile-image"
-              src="public/images/swamiji.jpg"
+              src="/images/swamiji.jpg"
               alt="Founder President"
             />
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 name">
@@ -521,7 +521,7 @@ const Committees = () => {
           >
             <img
               className="w-64 h-64 rounded-full shadow-2xl mb-8 profile-image"
-              src="public/images/swamiji2.0.jpg"
+              src="/images/swamiji2.0.jpg"
               alt="Chief Patron"
             />
             <p className="text-2xl md:text-3xl font-bold text-center mb-2 name">
@@ -581,19 +581,19 @@ const Committees = () => {
                 name: "Dr. S. V. Dinesh",
                 role: "Professor",
                 title: "SIT, Tumakuru",
-                img: "public/images/dinesh.jpg"
+                img: "/images/dinesh.jpg"
               },
               {
                 name: "Dr. Sajjan G Shiva",
                 role: "Professor",
                 title: "University of Memphis, USA",
-                img: "public/images/DrSajjan.jpg"
+                img: "/images/DrSajjan.jpg"
               },
               {
                 name: "Dr. S. S. Iyengar",
                 role: "Professor",
                 title: "Florida International University, Miami",
-                img: "public/images/ssiyengar.jpeg"
+                img: "/images/ssiyengar.jpeg"
               }
             ].map((chair, index) => (
               <motion.div 

@@ -10,7 +10,7 @@ function Title() {
           <div className="flex-1 flex items-center justify-center space-x-6">
             <Link to="/" className="flex-shrink-0 transform hover:scale-105 transition-transform duration-300">
               <img
-                src="public/images/logo.png"
+                src="/images/logo.png"
                 alt="SIT Logo"
                 className="h-20 w-20 object-contain bg-white rounded-full p-1"
               />

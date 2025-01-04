@@ -429,7 +429,7 @@ function Home() {
                 }}
               >
                 <img 
-                  src="public/images/swamiji.jpg"
+                  src="/images/swamiji.jpg"
                   alt="SIT Logo" 
                   className="w-full h-auto object-contain"
                 />
@@ -445,7 +445,7 @@ function Home() {
                 }}
               >
                 <img 
-                  src="public/images/logo.png"
+                  src="/images/logo.png"
                   alt="SIT Logo" 
                   className="w-full h-auto object-contain"
                 />
@@ -461,7 +461,7 @@ function Home() {
                 }}
               >
                 <img 
-                  src="public/images/swamiji2.0.jpg"
+                  src="/images/swamiji2.0.jpg"
                   alt="SIT Tribute" 
                   className="w-full h-auto object-contain"
                 />
