@@ -255,7 +255,7 @@ const organizingCommittee = [
 const advisoryCommittee = [
   {
     name: "Dr. Mahadeva Prasanna",
-    role: "Director, IIT Dharwad, Karnataka, India"
+    role: "Director, IIIT Dharwad, Karnataka, India"
   },
 //   Dr. Parameshachari B D, SAC Chair, IEEE Bangalore Section
 // Mr. Gajendra Deshpande, Execom Member,IEEE Bangalore Section
