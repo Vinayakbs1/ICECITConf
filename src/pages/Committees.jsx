@@ -288,7 +288,7 @@ const advisoryCommittee = [
     role: "Professor, DIAT, DRDO, Pune, India"
   },
   {
-    name: "Dr. Mahesha Pandit",
+    name: "Dr. Mahesha BR Pandit",
     role: "Chief Technology Officer (CTO), Canarys Automations Limited, Bengaluru, Karnataka, India"
   },
   {
@@ -384,35 +384,14 @@ const publicationChairs = [
   {
     name: "Dr. H D Kallinatha",
     role: "Assistant Professor, Dept. of Computer Science & Engineering"
+  },
+  {
+    name:"Dr. S Sharath Kumar",
+    role:"Assistant Professor, Dept. of Information Science & Engineering"
   }
 ];
 
-const technicalChairs = [
-  {
-    name: "Dr. T C Pramod",
-    role: "Associate Professor, Dept. of Computer Science & Engineering"
-  },
-  {
-    name: "Dr. Sumalatha Aradhya",
-    role: "Associate Professor, Dept. of Computer Science & Engineering"
-  },
-  {
-    name: "Dr. H Kavitha",
-    role: "Associate Professor, Dept. of Information Science & Engineering"
-  },
-  {
-    name: "Dr. A H Shanthakumara",
-    role: "Assistant Professor, Dept. of Computer Science & Engineering"
-  },
-  {
-    name: "Dr. Bharathi P T",
-    role: "Assistant Professor, Dept. of Computer Science & Engineering"
-  },
-  {
-    name: "Dr. T M Kiran Kumar",
-    role: "Assistant Professor, Dept. of Computer Science & Engineering"
-  }
-];
+
 
 const publicityChairs = [
   {
@@ -432,6 +411,10 @@ const publicityChairs = [
     role: "Assistant Professor, Dept. of Computer Science & Engineering"
   },
   {
+    name: "Dr.C Bhanuprakash",
+    role: "Assistant Professor, Dept. of Master of Computer Applications"
+  },
+  {
     name: "Mr. Keerthan Kumar T G",
     role: "Assistant Professor, Dept. of Information Science & Engineering"
   }
@@ -449,6 +432,14 @@ const financeChairs = [
   {
     name: "Dr. K Srinivasa",
     role: "Assistant Professor, Dept. of Computer Science & Engineering"
+  },
+  {
+    name: "Dr. Bharathi P T",
+    role: "Assistant Professor, Dept. of Computer Science & Engineering"
+  },
+  {
+    name: "Dr. T M Kiran Kumar",
+    role: "Assistant Professor, Dept. of Computer Science & Engineering"
   }
 ];
 
@@ -464,7 +455,6 @@ const Committees = () => {
     { id: 'advisory', label: 'Advisory Committee' },
     { id: 'technical-chairs', label: 'Technical Program Chairs' },
     { id: 'publication', label: 'Publication Chairs' },
-    { id: 'technical', label: 'Technical Chairs' },
     { id: 'publicity', label: 'Publicity Chairs' },
     { id: 'finance', label: 'Finance Chairs' },
     { id: 'committee', label: 'Technical Committee' }
@@ -711,16 +701,20 @@ const Committees = () => {
                 role: "EXECOM Vice Chair Industry Engagement & Open/IEEE Standard, IEEE Bangalore Section-2024"
               },
               {
-                name: "Dr. N R Sunitha",
-                role: "Professor & Head, Dept. of Computer Science & Engineering"
+                name: "Dr. T C Pramod",
+                role: "Associate Professor, Dept. of Computer Science & Engineering"
               },
               {
-                name: "Dr. R Aparna",
-                role: "Professor & Head, Dept. of Information Science and Engineering"
+                name: "Dr. Sumalatha Aradhya",
+                role: "Associate Professor, Dept. of Computer Science & Engineering"
               },
               {
-                name: "Dr. B G Premasudha",
-                role: "Professor & Head, Dept. of Master of Computer Applications"
+                name: "Dr. H Kavitha",
+                role: "Associate Professor, Dept. of Information Science & Engineering"
+              },
+              {
+                name: "Dr. H S Vijaya Kumar",
+                role: " Assistant Professor, Dept. of Master of Computer Applications"
               }
             ].map((member, index) => (
               <motion.div 
@@ -749,32 +743,6 @@ const Committees = () => {
           </h2>
           <div className="committee-grid">
             {publicationChairs.map((member, index) => (
-              <motion.div 
-                key={index}
-                className="text-center card p-6"
-                whileHover={{ scale: 1.02 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.5,
-                  delay: index * 0.1
-                }}
-              >
-                <p className="text-xl font-bold mb-2 name">{member.name}</p>
-                <p className="text-md text-gray-700">{member.role}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Technical Chairs */}
-        <motion.section id="technical" className="section mb-12">
-          <h2 className="section-title">
-            Technical Chairs
-          </h2>
-          <div className="committee-grid">
-            {technicalChairs.map((member, index) => (
               <motion.div 
                 key={index}
                 className="text-center card p-6"
