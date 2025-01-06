@@ -257,6 +257,16 @@ const advisoryCommittee = [
     name: "Dr. Mahadeva Prasanna",
     role: "Director, IIT Dharwad, Karnataka, India"
   },
+//   Dr. Parameshachari B D, SAC Chair, IEEE Bangalore Section
+// Mr. Gajendra Deshpande, Execom Member,IEEE Bangalore Section
+{
+  name: " Dr. Parameshachari B D",
+  role:" SAC Chair, IEEE Bangalore Section"
+},
+{
+  name: " Mr. Gajendra Deshpande",
+  role:" Execom Member,IEEE Bangalore Section"
+},
   {
     name: "Dr. Shashidhar Patil",
     role: "Assistant Manager (Research & Development), Seokyoung Systems, Seoul, South Korea"
