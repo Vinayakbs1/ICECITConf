@@ -697,6 +697,10 @@ const Committees = () => {
                 role: "EXECOM Member-2024"
               },
               {
+                name: "Dr. Chengappa M R",
+                role: "EXECOM Vice Chair Industry Engagement & Open/IEEE Standard, IEEE Bangalore Section-2024"
+              },
+              {
                 name: "Dr. N R Sunitha",
                 role: "Professor & Head, Dept. of Computer Science & Engineering"
               },
